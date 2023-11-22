@@ -19,7 +19,7 @@ spec:
       initContainers:
         - name: wait-for-db
           image: busybox:1.28
-          command: ['sh', '-c', 'until nc -zv db 5432; do echo "waiting for db"; sleep 10; done;']
+          command: ['sh', '-c', 'until nc -zv db 5432; do echo "waiting for db"; sleep 60; done;']
       containers:
         - image: juanpimentellugo/cicd
           name: server
@@ -55,7 +55,7 @@ spec:
         - env:
             - name: POSTGRES_DB
               value: example
-            - name: POSTGRES_PASSWORD
+            - name: example
               value: example
           image: postgres
           name: db
