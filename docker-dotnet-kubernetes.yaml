@@ -55,7 +55,7 @@ spec:
         - env:
             - name: POSTGRES_DB
               value: example
-            - name: example
+            - name: POSTGRES_PASSWORD
               value: example
           image: postgres
           name: db
